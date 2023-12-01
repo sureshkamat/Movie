@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+AllRoutes.js
+Purpose:
+This file defines the routing logic for the application using the Routes and Route components from react-router-dom.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Components:
+Home: Renders the main page of the application displaying featured movies.
+Favorite: Displays a list of favorite movies saved by the user.
+Details: Displays detailed information about a specific movie based on its id.
+Login: Provides a user authentication system, allowing users to register and log in.
+Routing:
+Home Route:
 
-## Available Scripts
+Path: '/'
+Component: <Home />
+Description: Renders the main page with featured movies.
+Favorite Route:
 
-In the project directory, you can run:
+Path: '/favorite'
+Component: <Favorite />
+Description: Displays the user's favorite movies.
+Details Route:
 
-### `npm start`
+Path: '/details/:id'
+Component: <Details />
+Description: Displays detailed information about a specific movie identified by id.
+Login Route:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Path: '/login'
+Component: <Login />
+Description: Provides user registration and login functionality.
+Catch-All Route:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Path: '*'
+Redirects to: '/'
+Description: Redirects to the home page if the provided route does not match any defined routes.
+Home.js
+Purpose:
+This component represents the main page of the application, featuring a list of movies, search functionality, and sorting options.
 
-### `npm test`
+State:
+data: Stores the movie data fetched from the OMDB API.
+search: Stores the search query for movie titles.
+page: Keeps track of the current page for pagination.
+filter: Stores the selected genre filter.
+yearfilter: Stores the selected year filter.
+yearsorting: Stores the selected sorting option based on the movie release year.
+Dependencies:
+External Libraries:
+axios: Used for making HTTP requests to the OMDB API.
+react-router-dom: Used for client-side routing.
+Functionality:
+Fetches movie data based on search, page, genre, and year filters.
+Allows users to search for movies, apply genre and year filters, and sort results by release year.
+Paginates the movie results.
+Displays movies in a responsive grid layout.
+Login.js
+Purpose:
+This component provides user registration and login functionality.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+State:
+username: Stores the entered username.
+password: Stores the entered password.
+isRegistered: Tracks whether the user is in the login or signup mode.
+loginError: Stores any error messages during login or registration.
+Dependencies:
+External Libraries:
+chakra-ui/react: Used for UI components like buttons and headings.
+react-router: Used for client-side routing.
+Functionality:
+Allows users to register with a unique username and password.
+Validates and logs in users based on their entered credentials.
+Switches between login and signup modes.
+Navbar.js
+Purpose:
+This component provides navigation links for the main pages of the application.
 
-### `npm run build`
+Dependencies:
+External Libraries:
+chakra-ui/react: Used for UI components like buttons and flex containers.
+react-router-dom: Used for client-side routing.
+Functionality:
+Provides navigation links to the home page, favorites, and login/signup page.
+Movie.js
+Purpose:
+This component represents a movie card displayed in the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Dependencies:
+External Libraries:
+react-router-dom: Used for client-side routing.
+Functionality:
+Displays information about a movie, including its title, release year, type, and poster.
+Links to the detailed page for the specific movie.
+Pagination.js
+Purpose:
+This component provides pagination functionality for navigating through the list of movies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Dependencies:
+External Libraries:
+chakra-ui/react: Used for UI components like buttons.
+Functionality:
+Allows users to navigate to the previous and next pages.
+Details.js
+Purpose:
+This component displays detailed information about a specific movie.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+State:
+state: Stores the detailed information of the selected movie.
+Dependencies:
+External Libraries:
+chakra-ui/react: Used for UI components like buttons, box, and image.
+axios: Used for making HTTP requests to the OMDB API.
+react-router-dom: Used for client-side routing.
+Functionality:
+Fetches and displays detailed information about a specific movie.
+Allows users to add the movie to their favorites.
+Movie.css, Login.css, Details.css
+Purpose:
+These files contain styling information for their respective components.
