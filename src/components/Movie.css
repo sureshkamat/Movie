@@ -1,0 +1,27 @@
+.movieCard {
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    text-align: center;
+    padding: 5px;
+    
+  }
+  
+  .movieCard > img {
+    width: 14vmax;
+  }
+
+  .movieCard > p {
+    font-size: 1.8vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .movieCard:hover {
+    box-shadow: 0 0 5px rgb(15, 15, 15, 0.26);
+    transform: translateY(-1vmax);
+  }

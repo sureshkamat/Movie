@@ -1,0 +1,30 @@
+.detail-Box{
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 5% auto;
+}
+.detail-Box2{
+    text-align: left;
+}
+.mini-details{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.last-button{
+    width: max-content;
+    display: flex;
+    padding: 20px 0px;
+    gap: 20px;
+}
+@media screen and (max-width: 768px) {
+    .detail-Box{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+        margin: 5% auto;
+    }
+  }

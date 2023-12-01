@@ -1,0 +1,22 @@
+.Box {
+    align-items: center;
+    margin: auto;
+    width: 40%; /* Adjust the width as needed */
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .Box {
+      width: 90%; /* Adjust the width for smaller screens */
+    }
+  }
